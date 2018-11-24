@@ -12,6 +12,8 @@ exports.run = async (client, message, args) => {
   if(message.flags[0] == "p" || message.flags[0] == "preban") {
     if(typeof member !== "string") return message.channel.send("You must give an id in a hackban.");
     client.hackbans.ensure(message.guild.id, []);
+    let hacks = client.hackbans.get(message.guild.id);
+    if(hacks.includes(member)) return message.channel.send("That member is already prebanned");
     client.hackbans.push(message.guild.id, member);
     let embed = await client.generateModEmbed(member, "Ban", message.member, reason);
     if(!embed) return message.channel.send("Error: An unexpected error has occured... exiting.");
