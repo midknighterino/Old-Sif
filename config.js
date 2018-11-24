@@ -9,7 +9,7 @@ const config = {
   "support": ["290374730991665154"],
 
   //Token of the bot, like the password of the bot
-  "token": "NTE1ODkxMDgzMDcxMzI0MTcw.DtsfIA.4gOMKIJ73Ph5dlD2nDy6Ny1pZ_c",
+  "token": "no-token-4-u",
 
   //Default guild settings
   "defaultSettings" : {
