@@ -1,12 +1,12 @@
 const config = {
   //Bot Owner, can eval and do other stuff
-  "ownerID": "useridhere",
+  "ownerID": "336442527408193537",
 
   //Bot Admin, can develop and restart the bot
-  "admins": ["useridhere"],
+  "admins": ["290374730991665154"],
 
   //Support for the bot, not needed
-  "support": ["useridhere"],
+  "support": ["290374730991665154"],
 
   //Token of the bot, like the password of the bot
   "token": "no-token-4-u",
