@@ -1,0 +1,19 @@
+{
+  "name": "Carl-Clone",
+  "version": "2.0.0",
+  "description": "A simple discord carlbot clone",
+  "main": "main.js",
+  "author": "Riley Bailey",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "better-sqlite-pool": "^0.1.2",
+    "chalk": "^2.3.0",
+    "discord.js": "discordjs/discord.js",
+    "enmap": "^4.2.1",
+    "giphy-api": "^2.0.1",
+    "moment": "^2.22.2",
+    "moment-duration-format": "^2.2.0",
+    "ms": "^2.1.1"
+  }
+}
