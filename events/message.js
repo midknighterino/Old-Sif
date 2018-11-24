@@ -1,15 +1,40 @@
 // The MESSAGE event runs anytime a message is received
 // Note that due to the binding of client to every event, every event
 // goes `client, other, args` when this function is run.
-
+const ms = require("ms");
 module.exports = async (client, message) => {
   // It's good practice to ignore other bots. This also makes your bot ignore itself
   // and not get into a spam loop (we call that "botception").
   if (message.author.bot) return;
 
+  //Word triggers for slow mode
+  if(["nigger", "faggot"].some(r => message.content.includes(r))) {
+    if(message.channel.rateLimitPerUser === 5) {
+      await message.channel.setRateLimitPerUser(10, "Test");
+      message.channel.send("Slowmode at 10 seconds");
+      setTimeout(() => {
+        message.channel.setRateLimitPerUser(5, "Test");
+        message.channel.send(`Slowmode is now at five`);
+
+        setTimeout(() => {
+          message.channel.setRateLimitPerUser(0, "Test")
+        }, ms("10m"))
+      }, ms("10m"))
+    }
+  }
   // Grab the settings for this server from Enmap.
   // If there is no guild, get default conf (DMs)
   const settings = message.settings = client.getSettings(message.guild.id);
+
+  let modRole = message.guild.roles.find(r => r.name === message.settings.modRole);
+  if(!modRole) message.channel.send("No modrole set up, please do so");
+
+  const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
+  if(message.guild.owner.id === message.author.id && message.content.startsWith("++slow")) {
+    let curr = message.channel.rateLimitPerUser + 5;
+    message.channel.setRateLimitPerUser(curr, "Moderator requested");
+    message.channel.send(`Increased slowmode by 5`)
+  }
 
   // Checks if the bot was mentioned, with no message after it, returns the prefix.
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
@@ -25,7 +50,6 @@ module.exports = async (client, message) => {
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
   // command = say
   // args = ["Is", "this", "the", "real", "life?"]
-  const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   // If the member on a guild is invisible or not cached, fetch them.

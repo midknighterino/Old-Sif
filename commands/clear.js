@@ -6,12 +6,12 @@ exports.run = async (client, message) => {
   if(amount > 100 || amount < 2) return message.channel.send("Values must be greater than 2 but less than or equal to 100.");
   await message.channel.messages.fetch({
     limit: amount,
-  }).then((messages) => {
+  }).then(async (messages) => {
     if (user) {
       const filterBy = user ? user.id : client.user.id;
       messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
     }
-    awaitmessage.channel.bulkDelete(messages).catch(error => console.log(error.stack));
+    await message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
   });
 
   message.channel.send(`${amount} messages has been deleted` ).then(message => message.delete(10000));
