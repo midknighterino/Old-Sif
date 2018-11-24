@@ -32,7 +32,7 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-  name: "tempmute",
+  name: "m",
   description: "tempnute a user for five minutes.",
   usage: "tempmute @member <time>",
   category: "Moderation Actions"
