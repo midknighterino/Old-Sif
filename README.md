@@ -6,6 +6,6 @@ Currently WIP, though functional. Offers a warn, mute, kick and ban command with
 Novel features:
 +mutevc - mutes all non-mod users in a VC, useful for moderation, events and debating
 
-Note: the bot token and userids have been stripped from the configs file and need to be edited in to work, if you do pull the files
-
-Note #2: node_modules could not be uploaded.  
+Notes
+- the bot token and userids have been stripped from the configs file. 
+- node_modules could not be uploaded, but is required for bot to function.   
