@@ -1,4 +1,5 @@
 const ms = require("ms");
+
 exports.run = async (client, message, args) => {
   let member = message.mentions.members.first();
   if(!member) return message.reply("Error: Please specify a member.");
@@ -6,13 +7,12 @@ exports.run = async (client, message, args) => {
   if(!member.kickable) return message.channel.send("Error: This member isn't mutable, please check my perms.");
 
 
-  let reason = args.slice(1).join(" ");
-  if(!reason) reason = "None specified"
-
+  let time = args.slice(1).join(" ");
+  
   let modLogChannel = message.guild.channels.find(c => c.name === message.settings.modLogChannel);
   if(!modLogChannel) return message.channel.send(`Error: Please set up a moderation log by using \`${message.settings.prefix}set edit modLogChannel #channel-name\``);
 
-  let embed = await client.generateModEmbed(member, "Mute", message.member, reason, "Indefinite");
+  let embed = await client.generateModEmbed(member, "Mute", message.member, "Tempmute", time);
   if(!embed) return message.channel.send("Error: An unexpected error has occured... exiting.");
 
   let muteRole = message.guild.roles.find(r => r.name === message.settings.muteRole);
@@ -22,18 +22,25 @@ exports.run = async (client, message, args) => {
   
   modLogChannel.send(embed);
   message.channel.send(embed);
+
+  setTimeout(() => {
+    member.roles.remove(muteRole);
+    let embed = client.generateModEmbed(member, "Unmute", message.member);
+    modLogChannel.send(embed);
+    message.channel.send(`Everyone welcome back <@${member.user.id}>`);
+  }, ms(time));
 };
 
 exports.help = {
-  name: "mute",
-  description: "Mute a user.",
-  usage: "mute <user> <reason>",
+  name: "tempmute",
+  description: "tempnute a user for five minutes.",
+  usage: "tempmute @member <time>",
   category: "Moderation Actions"
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["suppress"],
+  aliases: ["tm"],
   permLevel: "Moderator"
 };

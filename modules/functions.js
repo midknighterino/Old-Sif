@@ -56,7 +56,7 @@ module.exports = (client) => {
     case "Mute": {
       let embed = new MessageEmbed()
         .setTitle("MUTED")
-        .setDescription(`\n*You have lost the ability to chat in the usual voice and text channels.*\n\n**Member muted**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**For duration**: ${time}`)
+        .setDescription(`\n*You have lost the ability to chat in the usual voice and text channels.*\n\n**Member muted**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**For duration**: ${time}\n\n**Reason**: ${reason}`)
         .setColor(0x800080)
         .setImage("https://i.imgur.com/ebgo91a.png");
       return embed;

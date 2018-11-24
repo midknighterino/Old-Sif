@@ -8,20 +8,6 @@ module.exports = async (client, message) => {
   if (message.author.bot) return;
 
   //Word triggers for slow mode
-  if(["nigger", "faggot"].some(r => message.content.includes(r))) {
-    if(message.channel.rateLimitPerUser === 5) {
-      await message.channel.setRateLimitPerUser(10, "Test");
-      message.channel.send("Slowmode at 10 seconds");
-      setTimeout(() => {
-        message.channel.setRateLimitPerUser(5, "Test");
-        message.channel.send(`Slowmode is now at five`);
-
-        setTimeout(() => {
-          message.channel.setRateLimitPerUser(0, "Test")
-        }, ms("10m"))
-      }, ms("10m"))
-    }
-  }
   // Grab the settings for this server from Enmap.
   // If there is no guild, get default conf (DMs)
   const settings = message.settings = client.getSettings(message.guild.id);
