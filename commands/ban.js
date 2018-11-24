@@ -1,6 +1,9 @@
 exports.run = async (client, message, args) => {
   let member = message.mentions.members.first() || message.guild.members.find(m => m.user.id === args[0]);
   if(!member) return message.reply("Error: Please specify a member.");
+
+  
+
   if(member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send("Error: You may not do that, check the role hierarchy.");
   if(!member.bannable) return message.channel.send("Error: This member isn't bannable, please check my perms.");
 

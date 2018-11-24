@@ -9,7 +9,7 @@ const config = {
   "support": ["useridhere"],
 
   //Token of the bot, like the password of the bot
-  "token": "bottokenhere",
+  "token": "no-token-4-u",
 
   //Default guild settings
   "defaultSettings" : {
