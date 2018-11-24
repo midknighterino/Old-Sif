@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 const { promisify } = require("util");
 const r = promisify(require("fs").readdir);
 const Enmap = require("enmap");
-
+const timer = require("timer-machine");
 //Client stuff
 const client = new Discord.Client({
   disableEveryone: true
@@ -58,6 +58,8 @@ const init = async () => {
   //#endregion Pretty Perms!
 
   client.login(client.config.token);
+  client.timer = new timer()
+  client.timer.start();
 };
 
 //Run initialization

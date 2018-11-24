@@ -193,6 +193,11 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
+timer-machine@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/timer-machine/-/timer-machine-1.1.0.tgz#c66d3c226ec53ae48f54bdc03c402fe9840647fe"
+  integrity sha1-xm08Im7FOuSPVL3APEAv6YQGR/4=
+
 tweetnacl@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.0.tgz#713d8b818da42068740bf68386d0479e66fc8a7b"
