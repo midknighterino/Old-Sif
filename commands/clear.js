@@ -3,6 +3,7 @@ exports.run = async (client, message) => {
   const amount = parseInt(message.content.split(" ")[1]) ? parseInt(message.content.split(" ")[1]) : parseInt(message.content.split(" ")[2]);
   if (!amount) return message.reply("Must specify an amount to delete!");
   if (!amount && !user) return message.reply("Must specify a user and amount, or just an amount, of messages to purge!");
+  if(amount > 100 || amount < 2) return message.channel.send("Values must be greater than 2 but less than or equal to 100.");
   await message.channel.messages.fetch({
     limit: amount,
   }).then((messages) => {
@@ -10,7 +11,7 @@ exports.run = async (client, message) => {
       const filterBy = user ? user.id : client.user.id;
       messages = messages.filter(m => m.author.id === filterBy).array().slice(0, amount);
     }
-    message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
+    awaitmessage.channel.bulkDelete(messages).catch(error => console.log(error.stack));
   });
 
   message.channel.send(`${amount} messages has been deleted` ).then(message => message.delete(10000));

@@ -32,7 +32,7 @@ module.exports = (client) => {
     case "Ban": {
       let embed = new MessageEmbed()
         .setTitle("BANNED")
-        .setDescription(`\n**Member banned**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**Comments**: \`${reason}\``)
+        .setDescription(`\n**Member banned**: <@${reciever}>\n\n**By staff member**: <@${giver.user.id}>\n\n**Comments**: \`${reason}\``)
         .setColor(0xFF0000)
         .setImage("https://i.imgur.com/JeOHHmj.png");
       return embed;

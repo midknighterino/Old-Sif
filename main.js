@@ -24,6 +24,7 @@ client.commands = new Enmap();
 client.aliases = new Enmap();
 client.settings = new Enmap({name: "settings"});
 client.warns = new Enmap({name: "warns"});
+client.hackbans = new Enmap({name: "hackbans"});
 //Init function
 const init = async () => {
   //#region Command Loading Functionality
