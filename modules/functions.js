@@ -152,12 +152,10 @@ module.exports = (client) => {
   client.wait = require("util").promisify(setTimeout);
 
   process.on("uncaughtException", (err) => {
-    const errorMsg = err.stack.replace(new RegExp(`${__dirname}/`, "g"), "./");
-    client.logger.error(`Uncaught Exception: ${errorMsg}`);
-    process.exit(1);
+    console.log(err.stack)
   });
 
   process.on("unhandledRejection", err => {
-    client.logger.error(`Unhandled rejection: ${err}`);
+    console.log(err.stack)
   });
 };

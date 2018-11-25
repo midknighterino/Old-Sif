@@ -22,10 +22,11 @@ require("./modules/functions.js")(client);
 */
 client.commands = new Enmap();
 client.aliases = new Enmap();
-client.settings = new Enmap({name: "settings"});
-client.warns = new Enmap({name: "warns"});
-client.hackbans = new Enmap({name: "hackbans"});
-client.warns = new Enmap({name: "mutes"});
+client.settings = new Enmap({name: "settings", dataDir: "./data/"});
+client.warns = new Enmap({name: "warns", dataDir: "./data/"});
+client.hackbans = new Enmap({name: "hackbans", dataDir: "./data/"});
+client.warns = new Enmap({name: "mutes", dataDir: "./data/"});
+client.vcRoles = new Enmap({name: "vcRoles", dataDir: "./data/"});
 //Init function
 const init = async () => {
   //#region Command Loading Functionality
