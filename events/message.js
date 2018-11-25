@@ -22,6 +22,13 @@ module.exports = async (client, message) => {
     message.channel.send(`Increased slowmode by 5`)
   }
 
+  if(message.guild.owner.id === message.author.id && message.content.startsWith("++fast")) {
+    let curr = message.channel.rateLimitPerUser - 5;
+    if(message.channel.rateLimitPerUser = 0) return message.channel.send("There is no slowmode to speed up.");
+    message.channel.setRateLimitPerUser(curr, "Moderator requested");
+    message.channel.send(`Decreased slowmode by 5`)
+  }
+
   // Checks if the bot was mentioned, with no message after it, returns the prefix.
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
   if (message.content.match(prefixMention)) {
