@@ -23,4 +23,4 @@ Currently WIP, though functional. Offers a warn, mute, kick and ban command with
 - you can meet the makers and make suggestions at https://discord.gg/Mc8wsn 
 
 **License information**
-<img src="https://imgur.com/3AbRiQc" alt="Screencap of MIT License">
+<img src="https://imgur.com/3AbRiQc.jpg" alt="Screencap of MIT License">
