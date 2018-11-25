@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
 
   let arr4 = [arr1.random(),arr2.random(),arr3.random()];
 
-  let str = `${arr4.random()}`;
+  let str = `**${arr4.random()}**`;
 
   message.channel.send(str);
   
@@ -17,7 +17,7 @@ exports.run = async (client, message) => {
 
 exports.help = {
   name: "wyr",
-  description: "Prints a random Would You Rather prompt from a pool of over 200 of questions.",
+  description: "Randomly prints a Would You Rather question, with over 200 questions on tap!",
   usage: ".wyr",
   category: "Fun"
 };

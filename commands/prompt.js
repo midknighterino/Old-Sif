@@ -8,7 +8,7 @@ exports.run = async (client, message) => {
 
   let arr4= [arr1.random(),arr2.random(),arr3.random()];
 
-  let str = `${arr4.random()}`;
+  let str = `**${arr4.random()}**`;
 
   message.channel.send(str);
   
@@ -17,7 +17,7 @@ exports.run = async (client, message) => {
 
 exports.help = {
   name: "prompt",
-  description: "Prints a random discussion starter from a pool of over 200 questions",
+  description: "Randomly prints a discussion prompt, with over 200 prompts on tap!",
   usage: ".prompt",
   category: "Fun"
 };
