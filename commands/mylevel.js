@@ -12,7 +12,7 @@ exports.conf = {
 
 exports.help = {
   name: "checklevel",
-  category: "Miscelaneous",
+  category: "System",
   description: "See your bot permission level.",
   usage: "checklevel"
 };
