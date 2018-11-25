@@ -13,6 +13,11 @@ Currently WIP, though functional. Offers a warn, mute, kick and ban command with
 - VC Roles
 - Auto Slowmode
 
+**Fun features**
+- Pogan, randomly generates a politcal ideology, with over 300, 000 possibilities availiable
+- Prompt, randomly prints a discussion prompt.
+- Wyr, randomly prints a Would you rather question. 
+
 **Project staff:**
 - Midknight - I'm more an advisor, suggesting ideas for new functions and doing some editing of the text and visuals
 - Clam - Is the actual coder, doing all the heavy, thankless lifting.
