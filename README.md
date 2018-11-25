@@ -4,8 +4,9 @@
 Currently WIP, though functional. Offers a warn, mute, kick and ban command with images for each, an embed in the same channel the command is used, and logging to a predefined logging channel. 
 
 **Goals:**
-- Most commands should have an embed output with options for text and image responses when the command is succesful  
-- Novel commands that improve moderation of medium to large sized servers, like a command to mute an entire voice channel
+- Moderation commands, basic and special
+- chat XP and automated rank progression
+- Fun commands
 
 **Novel features:**
 - VC Mute
