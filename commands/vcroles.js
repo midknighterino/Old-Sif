@@ -15,16 +15,18 @@ exports.run = async (client, message, args) => {
     case "remove": {
       let vcRoles = client.vcRoles.get(message.guild.id);
       let vcRoles2 = client.vcRoles.get(message.guild.id);
-      console.log(vcRoles);
       let itemToRemove = vcRoles.findIndex((element) => element.vcid === message.member.voice.channel.id);
-      console.log(itemToRemove);
       let newRoles = vcRoles.splice(itemToRemove + 1, 1);
-      console.log(newRoles);
       let members = message.guild.members.filter(r => r.roles.has(vcRoles2[itemToRemove].roleid));
       let role = message.guild.roles.find(r => r.id === vcRoles2[itemToRemove].roleid)
       members.forEach(m => {
         m.roles.remove(role);
       });
+      message.channel.send("Removed VC role.");
+      break;
+    }
+    default: {
+      message.channel.send("You must supply an action by doing\`vrole -add|-remove [@Role]\`")
     }
   }
 };
@@ -32,13 +34,13 @@ exports.run = async (client, message, args) => {
 exports.help = {
   name: "vrole",
   description: "Create A vc role",
-  usage: "VCrole [-add, -",
+  usage: "vrole -add|-remove [@Role]",
   category: "Moderation Actions"
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["vrole"],
+  aliases: ["vcrole"],
   permLevel: "Server Owner"
 };

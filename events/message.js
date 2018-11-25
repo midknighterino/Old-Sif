@@ -12,9 +12,7 @@ module.exports = async (client, message) => {
   // If there is no guild, get default conf (DMs)
   const settings = message.settings = client.getSettings(message.guild.id);
 
-  let modRole = message.guild.roles.find(r => r.name === message.settings.modRole);
-  if(!modRole) message.channel.send("No modrole set up, please do so");
-
+  
   const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
   if(message.guild.owner.id === message.author.id && message.content.startsWith("++slow")) {
     let curr = message.channel.rateLimitPerUser + 5;
