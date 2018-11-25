@@ -14,5 +14,5 @@ module.exports = async (client, before, after) => {
       let role = after.guild.roles.find(r => r.id === c.roleid);
       after.member.roles.remove(role);
     }
-  } 
+  }
 };
