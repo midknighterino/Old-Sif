@@ -1,5 +1,5 @@
-# VisMod
-*A Visual Moderation Bot for Discord*
+# Sif
+*Building a better all-in-one bot*
 
 Currently WIP, though functional. Offers a warn, mute, kick and ban command with images for each, an embed in the same channel the command is used, and logging to a predefined logging channel. 
 
@@ -8,7 +8,9 @@ Currently WIP, though functional. Offers a warn, mute, kick and ban command with
 - Novel commands that improve moderation of medium to large sized servers, like a command to mute an entire voice channel
 
 **Novel features:**
-- +mutevc - mutes all non-mod users in a VC, useful for moderation, events and debating
+- VC Mute
+- VC Roles
+- Auto Slowmode
 
 **Project staff:**
 - Midknight - I'm more an advisor, suggesting ideas for new functions and doing some editing of the text and visuals
