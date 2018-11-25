@@ -18,8 +18,8 @@ Currently WIP, though functional. Offers a warn, mute, kick and ban command with
 - Clam - Is the actual coder, doing all the heavy, thankless lifting.
 
 **Notes:**
-- the bot token and userids have been stripped from the configs file. 
-- node_modules could not be uploaded, but is required for bot to function.
+- the bot token and userids have been stripped from the configs file. Make sure to fill them in if self hosting!
+- node_modules could not be uploaded, but is required for bot to function. Use npm install to fetch necessary files.
 - bot is entirely open source.  Feel free to tinker with it and make your own thing! 
 - you can meet the makers and make suggestions at https://discord.gg/Mc8wsn 
 
