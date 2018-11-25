@@ -9,7 +9,6 @@ module.exports = async (client, before, after) => {
   } else if(before.channelID && !after.channelID) {
     let channelD = before.channelID;
     if(client.vcRoles.get(after.guild.id).map(r => r.vcid).includes(before.channelID  )) {
-      
       let c = client.vcRoles.get(before.guild.id).find(r => r.vcid === before.channelID);
       let role = after.guild.roles.find(r => r.id === c.roleid);
       after.member.roles.remove(role);
