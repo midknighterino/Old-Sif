@@ -5,7 +5,7 @@ exports.run = async (client, message) => {
   let membersInVc = vc.members;
 
   let muteRole = message.guild.roles.find(r => r.name === message.settings.muteRole);
-  if(!muteRole) return message.channel.send("You must set up a muterole before you do this action.")
+  if(!muteRole) return message.channel.send("You must set up a muterole before you do this action.");
 
   membersInVc.forEach(v => {
     if(message.author.roles.has(muteRole.id)) return;

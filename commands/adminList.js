@@ -7,7 +7,7 @@ exports.run = async (client, message) => {
   let announcers = message.guild.members.filter(m => m.permissions.has("MENTION_EVERYONE"));
   announcers = announcers.filter(m => {
     if(m.user.bot) return false;
-    return true
+    return true;
   });
   let bots = message.guild.members.filter(m => m.user.bot);
   let embed = new MessageEmbed()

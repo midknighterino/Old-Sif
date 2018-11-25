@@ -5,8 +5,8 @@ exports.run = async (client, message) => {
   let muted = message.guild.members.filter(r => r.roles.has(muteRole.id));
   let embed = new MessageEmbed()
     .setTitle(`Muted members in ${message.guild.name}`)
-    .setDescription(muted.map(m => `${m.user.tag}`).join("\n"))
-  message.channel.send(embed)
+    .setDescription(muted.map(m => `${m.user.tag}`).join("\n"));
+  message.channel.send(embed);
 };
 
 

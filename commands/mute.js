@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
 
 
   let reason = args.slice(1).join(" ");
-  if(!reason) reason = "None specified"
+  if(!reason) reason = "None specified";
 
   let modLogChannel = message.guild.channels.find(c => c.name === message.settings.modLogChannel);
   if(!modLogChannel) return message.channel.send(`Error: Please set up a moderation log by using \`${message.settings.prefix}set edit modLogChannel #channel-name\``);

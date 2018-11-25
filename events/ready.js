@@ -7,5 +7,5 @@ module.exports = async client => {
   // Make the bot "play the game" which is the help command with default prefix.
   client.user.setActivity(`${client.config.defaultSettings.prefix}help`, {type: "PLAYING"});
   client.timer.stop();
-  client.logger.log(`Client started in: ${moment.duration(client.timer.time()).format(`s`)} seconds`)
+  client.logger.log(`Client started in: ${moment.duration(client.timer.time()).format("s")} seconds`);
 };

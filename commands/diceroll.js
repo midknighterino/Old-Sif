@@ -3,17 +3,17 @@ const {MessageEmbed} = require("discord.js");
 
 function median(values){
   values.sort(function(a,b){
-  return a-b;
-});
+    return a-b;
+  });
 
-if(values.length ===0) return 0
+  if(values.length ===0) return 0;
 
-var half = Math.floor(values.length / 2);
+  var half = Math.floor(values.length / 2);
 
-if (values.length % 2)
-  return values[half];
-else
-  return (values[half - 1] + values[half]) / 2.0;
+  if (values.length % 2)
+    return values[half];
+  else
+    return (values[half - 1] + values[half]) / 2.0;
 }
 
 exports.run = async (client, message, args) => {
@@ -27,7 +27,7 @@ exports.run = async (client, message, args) => {
     .addField("Sum", diceRolls.reduce((a, b) => a + b), true)
     .addField("Median", median(diceRolls));
 
-  message.channel.send(embed)
+  message.channel.send(embed);
 };
 
 

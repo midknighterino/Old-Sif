@@ -1,5 +1,5 @@
 exports.run = async (client, message, args) => {
-  let member = message.mentions.members.first() || args[0]
+  let member = message.mentions.members.first() || args[0];
   if(!member) return message.reply("Error: Please specify a member.");
 
   

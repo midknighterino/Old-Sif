@@ -60,7 +60,7 @@ const init = async () => {
   //#endregion Pretty Perms!
 
   client.login(client.config.token);
-  client.timer = new timer()
+  client.timer = new timer();
   client.timer.start();
 };
 

@@ -7,7 +7,7 @@ module.exports = async (client, member) => {
   let hacks = client.hackbans.get(member.guild.id);
   if(hacks.includes(member.user.id)) {
     let embed = await client.generateModEmbed(member, "Ban", member.guild.owner, "Preempive ban set by server owner");
-    if(!embed) return message.channel.send("Error: An unexpected error has occured... exiting.");
+    if(!embed) console.error("Houston, we have a problem!");
     let modLogChannel = member.guild.channels.find(c => c.name === settings.modLogChannel);
     if(!modLogChannel) return await member.ban();
     modLogChannel.send(embed);

@@ -152,14 +152,14 @@ module.exports = (client) => {
   client.wait = require("util").promisify(setTimeout);
 
   process.on("uncaughtException", (err) => {
-    console.log(err.stack)
+    console.log(err.stack);
   });
 
   process.on("unhandledRejection", err => {
-    console.log(err.stack)
+    console.log(err.stack);
   });
 
   client.average = (arr) => {
     return arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
-  }
+  };
 };

@@ -17,14 +17,14 @@ module.exports = async (client, message) => {
   if(message.guild.owner.id === message.author.id && message.content.startsWith("++slow")) {
     let curr = message.channel.rateLimitPerUser + 5;
     message.channel.setRateLimitPerUser(curr, "Moderator requested");
-    message.channel.send(`Increased slowmode by 5`)
+    message.channel.send("Increased slowmode by 5");
   }
 
   if(message.guild.owner.id === message.author.id && message.content.startsWith("++fast")) {
     let curr = message.channel.rateLimitPerUser - 5;
-    if(message.channel.rateLimitPerUser = 0) return message.channel.send("There is no slowmode to speed up.");
+    if(message.channel.rateLimitPerUser === 0) return message.channel.send("There is no slowmode to speed up.");
     message.channel.setRateLimitPerUser(curr, "Moderator requested");
-    message.channel.send(`Decreased slowmode by 5`)
+    message.channel.send("Decreased slowmode by 5");
   }
 
   // Checks if the bot was mentioned, with no message after it, returns the prefix.
