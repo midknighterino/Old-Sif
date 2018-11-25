@@ -32,15 +32,15 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-  name: "vrole",
-  description: "Create A vc role",
-  usage: "vrole -add|-remove [@Role]",
-  category: "Moderation Actions"
+  name: "vcrole",
+  description: "Create A VC role",
+  usage: "vcrole -add|-remove [@Role]",
+  category: "Moderation"
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["vcrole"],
+  aliases: ["vrole"],
   permLevel: "Server Owner"
 };

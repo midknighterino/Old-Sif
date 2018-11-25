@@ -28,7 +28,7 @@ exports.help = {
   name: "mute",
   description: "Mute a user.",
   usage: "mute <user> <reason>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

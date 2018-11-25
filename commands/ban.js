@@ -40,7 +40,7 @@ exports.help = {
   name: "ban",
   description: "Ban a user from your server.",
   usage: "ban <member> <reason>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

@@ -14,7 +14,7 @@ exports.help = {
   name: "checkmutes",
   description: "Show muted people.",
   usage: "checkmutes",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

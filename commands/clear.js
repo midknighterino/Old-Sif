@@ -22,7 +22,7 @@ exports.help = {
   name: "clear",
   description: "clear messages",
   usage: "clear <amount>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

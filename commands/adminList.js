@@ -21,7 +21,7 @@ exports.help = {
   name: "checkstaff",
   description: "Show admins and mods.",
   usage: "checkstaff",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

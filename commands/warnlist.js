@@ -17,7 +17,7 @@ exports.help = {
   name: "checkwarns",
   description: "Show your warns.",
   usage: "checkwarns",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

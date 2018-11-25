@@ -31,7 +31,7 @@ exports.help = {
   name: "warn",
   description: "warn a user in your server.",
   usage: "warn <member> <reason>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

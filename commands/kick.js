@@ -22,7 +22,7 @@ exports.help = {
   name: "kick",
   description: "kick a user from your server.",
   usage: "kick <member> <reason>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

@@ -35,7 +35,7 @@ exports.help = {
   name: "m",
   description: "tempnute a user for five minutes.",
   usage: "tempmute @member <time>",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {

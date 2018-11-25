@@ -27,7 +27,7 @@ exports.help = {
   name: "mutevc",
   description: "Mute all members in a VC (except you).",
   usage: "muteAll",
-  category: "Moderation Actions"
+  category: "Moderation"
 };
 
 exports.conf = {
