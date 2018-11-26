@@ -1,3 +1,4 @@
+const ytdl = require("ytdl-core");
 const {MessageEmbed} = require("discord.js");
 module.exports = (client) => {
   client.permlevel = message => {
@@ -161,5 +162,27 @@ module.exports = (client) => {
 
   client.average = (arr) => {
     return arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
+  };
+
+  client.play = (guild, song) => {
+    const serverQ = client.queue.get(guild.id);
+
+    if(!song) {
+      serverQ.voiceChannel.leave();
+      client.queue.delete(guild.id);
+      return;
+    }
+
+    const dispatcher = serverQ.connection.play(ytdl(song.url))
+      .on("end", () => {
+        serverQ.songs.shift();
+        client.play(guild, serverQ.songs[0]);
+      })
+      .on("error", (e) => {
+        client.logger.error(e);
+      });
+    dispatcher.setVolumeLogarithmic(5 / 5);
+
+    serverQ.textChannel.send(`Now playing \`${song.title}\``);
   };
 };

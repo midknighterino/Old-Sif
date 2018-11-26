@@ -12,6 +12,8 @@ const client = new Discord.Client({
   disableEveryone: true
 });
 
+client.queue = new Map();
+
 //Client config, logger (Which allows for pretty info), and functions
 client.config = require("./config.js");
 client.logger = require("./modules/logger.js");
