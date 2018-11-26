@@ -14,8 +14,7 @@ exports.run = async (client, message) => {
     await message.channel.bulkDelete(messages).catch(error => console.log(error.stack));
   });
 
-  await client.wait(4000);
-  message.channel.send(`${amount} messages have been deleted` ).then(message => message.delete({timeout: 10000}));
+  message.channel.send(`${amount} messages has been deleted` ).then(message => message.delete(10000));
 };
 
 

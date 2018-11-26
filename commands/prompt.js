@@ -8,12 +8,10 @@ exports.run = async (client, message) => {
 
   let arr4= [arr1.random(),arr2.random(),arr3.random()];
 
-  let str = `**${arr4.random()}**`;
+  let str = `🧠 **${arr4.random()}**`;
 
   message.channel.send(str);
-  
 };
-
 
 exports.help = {
   name: "prompt",

@@ -31,40 +31,50 @@ module.exports = (client) => {
     switch(action) {
     case "Ban": {
       let embed = new MessageEmbed()
-        .setTitle("BANNED")
-        .setDescription(`\n**Member banned**: <@${reciever}>\n\n**By staff member**: <@${giver.user.id}>\n\n**Comments**: \`${reason}\``)
+        .addField ("Member banned:", `<@${reciever.user.id}>`, true )
+        .addField ("By staff member:", `<@${giver.user.id}>`, true )
+        .addField ("Ban comment:", `${reason}`, true )
+        .addField ("For duration:", `${time}`, true )  
         .setColor(0xFF0000)
         .setImage("https://i.imgur.com/JeOHHmj.png");
       return embed;
     }
     case "Kick": {
       let embed = new MessageEmbed()
-        .setTitle("KICKED")
-        .setDescription(`\n**Member kicked**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**Comments**: \`${reason}\``)
+        .addField ("Member kicked:", `<@${reciever.user.id}>`, true )
+        .addField ("By staff member:", `<@${giver.user.id}>`, true )
+        .addField ("Kick comment:", `${reason}`, true )
+        .addField ("For duration:", `${time}`, true )  
         .setColor(0xFFD700)
         .setImage("https://i.imgur.com/3U3eFVE.png");
       return embed;
     }
     case "Warn": {
       let embed = new MessageEmbed()
-        .setTitle("WARNED")
-        .setDescription(`\n*If you carry on you will be muted or banned. Please revisit the server rules.*\n\n**Member warned**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**Comments**: \`${reason}\``)
+        .addField ("Member warned:", `<@${reciever.user.id}>`, true )
+        .addField ("By staff member:", `<@${giver.user.id}>`, true )
+        .addField ("Warn comment:", `${reason}`, true )
+        .addField ("For duration:", `${time}`, true )  
         .setColor(0x008B8B)
         .setImage("https://i.imgur.com/84ZH535.png?1");
       return embed;
     }
     case "Mute": {
       let embed = new MessageEmbed()
-        .setTitle("MUTED")
-        .setDescription(`\n*You have lost the ability to chat in the usual voice and text channels.*\n\n**Member muted**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>\n\n**For duration**: ${time}\n\n**Reason**: ${reason}`)
+        .addField ("Member muted:", `<@${reciever.user.id}>`, true )
+        .addField ("By staff member:", `<@${giver.user.id}>`, true )
+        .addField ("Mute comment:", `${reason}`, true )
+        .addField ("For duration:", `${time}`, true )  
         .setColor(0x800080)
         .setImage("https://i.imgur.com/ebgo91a.png");
       return embed;
     }
     case "Unmute": {
       let embed = new MessageEmbed()
-        .setTitle("UNMUTED")
-        .setDescription(`\n*You have regained the ability to chat in the usual voice and text channels.*\n\n**Member unmuted**: <@${reciever.user.id}>\n\n**By staff member**: <@${giver.user.id}>`)
+        .addField ("Member unmuted:", `<@${reciever.user.id}>`, true )
+        .addField ("By staff member:", `<@${giver.user.id}>`, true )
+        .addField ("Comment by staff member", `${reason}`, true )
+        .addField ("For duration", `${time}`, true )  
         .setColor(0x90EE90)
         .setImage("https://i.imgur.com/9Znmrvm.png");
       return embed;
@@ -158,8 +168,4 @@ module.exports = (client) => {
   process.on("unhandledRejection", err => {
     console.log(err.stack)
   });
-
-  client.average = (arr) => {
-    return arr.reduce( ( p, c ) => p + c, 0 ) / arr.length;
-  }
 };

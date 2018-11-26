@@ -33,14 +33,14 @@ exports.run = async (client, message, args) => {
 
 exports.help = {
   name: "m",
-  description: "tempnute a user for five minutes.",
-  usage: "tempmute @member <time>",
+  description: "tempmute a user for five minutes.",
+  usage: ".m @member <time>",
   category: "Moderation"
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["tm"],
+  aliases: ["tm", "tempmute"],
   permLevel: "Moderator"
 };
