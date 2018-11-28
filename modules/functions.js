@@ -173,6 +173,15 @@ module.exports = (client) => {
       return;
     }
 
+    var minutes = Math.floor(song.length / 60);
+    var seconds = song.length - minutes * 60;
+
+    let embed = new MessageEmbed()
+      .setTitle(`Playing: \`${song.title}\``)
+      .setDescription(`Length: **${minutes}:${seconds}**`)
+      .setThumbnail(song.thumb);
+    serverQ.textChannel.send(embed);
+
     const dispatcher = serverQ.connection.play(ytdl(song.url))
       .on("end", () => {
         serverQ.songs.shift();
@@ -182,7 +191,5 @@ module.exports = (client) => {
         client.logger.error(e);
       });
     dispatcher.setVolumeLogarithmic(5 / 5);
-
-    serverQ.textChannel.send(`Now playing \`${song.title}\``);
   };
 };

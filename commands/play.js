@@ -14,7 +14,9 @@ exports.run = async (client, message, args) => {
 
   const song = {
     title: songInfo.title,
-    url: songInfo.video_url
+    url: songInfo.video_url,
+    length: songInfo.length_seconds,
+    thumb: songInfo.thumbnail_url
   };
 
   if(!serverQueue) {

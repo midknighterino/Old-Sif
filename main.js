@@ -31,6 +31,9 @@ client.warns = new Enmap({name: "mutes", dataDir: "./data/"});
 client.vcRoles = new Enmap({name: "vcRoles", dataDir: "./data/"});
 //Init function
 const init = async () => {
+  //await enmaps;
+
+
   //#region Command Loading Functionality
   const cmdFiles = await r("./commands/");
   client.logger.log(`Loading a total of ${cmdFiles.length} commands.`);

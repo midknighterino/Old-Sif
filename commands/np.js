@@ -4,7 +4,7 @@ exports.run = async (client, message, args) => {
   if(!serverQ) return message.channel.send("Nothing is playing as of now!");
   let embed = new MessageEmbed()
     .setTitle("Now Playing")
-    .setDescription(serverQ.songs[0].map((v) => `${v.title}`))
+    .setDescription(`:musical_note: ${serverQ.songs[0].title}`)
     .setColor(0x2d5aa3);
   message.channel.send(embed);
 };
